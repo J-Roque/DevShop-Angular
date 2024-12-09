@@ -1,0 +1,116 @@
+.section-contacto {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+}
+
+.contacto-contenedor {
+    padding: 40px 0;
+    border-bottom: 1px solid #1e2021;
+    h1 {
+        font-family: 'Gugi', sans-serif;
+
+        text-align: center;
+        font-size: 40px;
+        color: #fff;
+    }
+
+    p {
+        text-align: center;
+        color: #a89984;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin: 5px 0 40px 0;
+    }
+
+
+}
+
+.form {
+    max-width: 600px;
+    height: auto;
+    margin:  0 auto;
+
+    .form-item {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        input {
+            width: 100%;
+            padding: 12px;
+            background-color: #3c3837;
+            list-style: none;
+            outline: none;
+            border-style: none;
+            color: #7c6f64;
+            font-size: 16px;
+        }
+    }
+    textarea {
+        width: 600px;
+        height: 160px;
+        background-color: #3c3837;
+        list-style: none;
+        border-style: none;
+        outline: none;
+        color: #7c6f64;
+        font-size: 16px;
+        padding: 10px;
+        margin:20px 0;
+        resize: none;
+    }
+ 
+.form-item-btn{
+    display: flex;
+    justify-content: flex-end;
+
+    button{
+        padding: 12px 16px;
+        letter-spacing: 1px;
+        border-style: none;
+        outline: none;
+        background-color: #689d6a;
+        color: #fff;
+        font-weight: 500;
+        font-size:15px
+      }
+}
+   
+}
+.contact-gmail{
+    padding: 40px 0;
+    p{
+        text-align: center;
+        color: #fbf1c7;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding-bottom: 5px;
+    }
+    span{
+        color: red;
+
+    }
+    b{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+@media(max-width:700px) {
+    .contacto-contenedor{
+        padding: 40px;
+        form{
+            width: 100%;
+        }
+        textarea{
+            width: 100%;
+        }
+        .form-item{
+            flex-wrap: wrap;
+        }
+    }
+   
+}

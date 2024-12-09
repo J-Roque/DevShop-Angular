@@ -1,0 +1,27 @@
+<section>
+  <header class="header">
+    <div class="header-anburger" (click)="showMenu(true)">
+      <i class='bx bx-menu'></i>
+    </div>
+    <div class="header_logo">
+      <p>
+        <span>^/:</span>
+        Dcoding
+        <span>();</span>
+      </p>
+    </div>
+    <nav class="header_nav ">
+      <ul class="nav_ul flex">
+        <li class="nav_ul_li"><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+        <li class="nav_ul_li"><a routerLink="colecion" routerLinkActive="active">Colecciones</a></li>
+        <li class="nav_ul_li"><a routerLink="search" routerLinkActive="active">Buscar</a></li>
+        <li class="nav_ul_li"><a routerLink="contacto" routerLinkActive="active">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header_cart">
+      <p (click)="showCart(true)">Carrito <span>({{ numProductosEnCarrito }})</span></p>
+    </div>
+  </header>
+  <app-menu class="app-menu" *ngIf="statusMenuCart$ | async"></app-menu>
+  <app-menu-izquierdo class="app-menu" *ngIf="statusMenu$ | async"></app-menu-izquierdo>
+</section>

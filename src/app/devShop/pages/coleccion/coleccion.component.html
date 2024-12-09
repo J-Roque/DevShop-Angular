@@ -1,0 +1,20 @@
+<div class="home_prod_sheard">
+  <p>Buscar una colección</p>
+  <div class="prod_sheard-btn">
+      <input type="text" [formControl]="formleguage" placeholder="C++, Javascript, Python, Rust, Java, Kotlin...">
+      <button [routerLink]="['/search/',formleguage.value]">Buscar</button>
+  </div>
+</div>
+
+<div class="prod_sheard-collecion">
+  <div class="sheard-collecion_contenedor">
+    <!-- <div class="colleccion_contenedor_title">
+      <p>Coleccion</p>
+    </div> -->
+    <div class="colleccion_contenedor_card"  
+    *ngFor="let  data of colecionProd" [routerLink]="['/colecion/',data.nombre]">
+      <img  [src]="data.image_url" alt="{{data.nombre}}">
+      <p class="p-secundario" >{{data.nombre}}</p>
+    </div>
+  </div>
+</div>

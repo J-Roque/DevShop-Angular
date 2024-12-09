@@ -1,0 +1,69 @@
+<section>
+  <div class="home_prod_sheard">
+    <p>Buscar una colección</p>
+    <div class="prod_sheard-btn">
+        <input type="text" [formControl]="formleguage" placeholder="C++, Javascript, Python, Rust, Java, Kotlin...">
+        <button [routerLink]="['/search/',formleguage.value]">Buscar</button>
+    </div>
+  </div>
+  
+
+  <div class="prod_sheard-collecion">
+    <div class="hone_listprod">
+      <div class="sheard-collecion_contenedor">
+        <div class="colleccion_contenedor_title">
+          <p>Coleccion</p>
+        </div>
+        <div class="colleccion_contenedor_card" *ngFor="let data of colecionProd"  >
+          <img
+            [src]="data.image_url"
+            [alt]="data.nombre" [routerLink]="['/colecion/',data.nombre]">
+          <p [routerLink]="['/colecion/',data.nombre]">{{data.nombre}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="prod_sheard-collecion">
+    <div class="hone_listprod">
+      <div class="sheard-collecion_contenedor cl-camisetas">
+        <div class="colleccion_contenedor_title">
+          <p>Coleccion de Camisetas</p>
+        </div>
+        <div class="colleccion_contenedor_card" *ngFor="let data of colecionProdCamiseta"  >
+          <img
+            [src]="data.thema_imagen.oscuro"
+            [alt]="data.nombre_prod" 
+            [routerLink]="['/colecion/',data.collecion,data.nombre_prod]">
+          <p [routerLink]="['/colecion/',data.collecion,data.nombre_prod]">{{data.nombre_prod}}</p>
+          <span class="precio_producto">
+            PEN S/ {{data.precio}}
+          </span>
+          <p   class="p-secundario">{{data.collecion}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prod_sheard-collecion">
+    <div class="hone_listprod">
+      <div class="sheard-collecion_contenedor cl-camisetas">
+        <div class="colleccion_contenedor_title">
+          <p>Colección de sudaderas con capucha</p>
+        </div>
+        <div class="colleccion_contenedor_card" *ngFor="let sudadera of colecionSudadera" >
+          <img
+          [src]="sudadera.thema_imagen.oscuro"
+            [alt]="sudadera.nombre_prod"
+            [routerLink]="['/colecion/',sudadera.collecion,sudadera.nombre_prod]">
+          <p [routerLink]="['/colecion/',sudadera.collecion,sudadera.nombre_prod]">{{sudadera.nombre_prod}}</p>
+          <span class="precio_producto">
+            PEN S/ {{sudadera.precio}}
+          </span>
+          <p class="p-secundario">{{sudadera.collecion}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

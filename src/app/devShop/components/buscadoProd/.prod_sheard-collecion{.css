@@ -1,0 +1,59 @@
+.prod_sheard-collecion{
+    border-bottom: 1px solid #1e2021;
+    padding-top: 40px;
+    p{
+        color: #FBF1C7;
+        padding: 8px;
+        background-color: #3c3837;
+        display: inline;
+        letter-spacing: 1px;
+    }
+    img{
+        max-width: 163px;
+        height: 163px;
+        margin-bottom: 10px;
+    }
+    .active{
+        background-color: #FBF1C7;
+        color: red;
+    }
+    .sheard-collecion_contenedor{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 40px 0;
+        gap: 20px;
+    }
+    .colleccion_contenedor_card{
+        display: flex;
+        flex-direction: column;
+        p{
+            background-color: inherit;
+            padding: 0;
+        }
+    }
+    .cl-camisetas{
+        .colleccion_contenedor_card{
+            max-width: 251px;
+        }
+        p{
+            word-wrap: break-word;
+        }
+        img{
+            max-width: 100%;
+            height: 251px;
+        }
+        span{
+            color: #8EC07C;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        .p-secundario{
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #A89984;
+            margin-top: 5PX;
+        }
+    }
+   
+}

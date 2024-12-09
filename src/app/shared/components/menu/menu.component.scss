@@ -1,0 +1,162 @@
+.contenedor-menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu {
+  position: relative;
+  width: 500px;
+  height: 100%;
+  background-color: #282828;
+  box-shadow: 0 0 0 15px rgba(0, 0, 0, .12549);
+
+  .menu-header {
+    padding: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #1e2021;
+
+    p {
+      font-family: 'Gugi', sans-serif;
+      color: #fbf1c7;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    a {
+      font-family: 'Gugi', sans-serif;
+      color: #a89984;
+      font-size: 30px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .menu-lisprod{
+    width: 100%;
+    height: 470px;
+    overflow-x: scroll;
+  }
+  .menu-sindata {
+    padding: 24px;
+
+    p {
+      color: #fbf1c7;
+      letter-spacing: 2px;
+      cursor: pointer;
+
+    }
+  }
+
+
+
+  .lisprod-cart {
+    display: flex;
+    gap: 20px;
+    padding:  24px;
+    border-bottom: 1px solid #1e2021;
+    img {
+      max-width: 160px;
+      max-height: 160px;
+    }
+  }
+
+  .lisprod-cart-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .item1 {
+      justify-content: space-between;
+    }
+
+    .item-title {
+      color: #a89984 !important;
+      font-size: 12px;
+    }
+
+    .cart-info-item {
+      display: flex;
+      align-items: center;
+      color: #fbf1c7;
+      letter-spacing: 1px;
+      gap: 20px;
+      font-weight: 500;
+
+      span {
+        color: #8ec07c;
+        font-weight: 600;
+      }
+    }
+    .btn-remov{
+      margin-top: 20px;
+    }
+    .btn-cantidad{
+      display: flex;
+      gap: 10px;
+
+      button{
+        background-color: inherit;
+        border-style: none;
+        font-size: 15px;
+        width: 20px;
+        color: #fbf1c7;
+        cursor: pointer;
+      };
+     
+    }
+  }
+
+  .menu-subtotal{
+    position: absolute;
+    width: 100%;
+    margin: inset;
+    padding: 24px;
+    .menu-subtotal-cardprecio{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: #fbf1c7;
+      font-weight: 500;
+      span{
+        color: #8ec07c;
+        font-size: 20px;
+      }
+    }
+    .menu-subtotal-cardbtn{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 20px;
+      gap: 10px;
+      button{
+        width: 200px;
+        height: 50px;
+        background-color: #689d6a;
+        border-style: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      p{
+        max-width: 300px;
+        text-align: center;
+        color: #a89984;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@media(max-width:500px) {
+  .menu {
+    width: 100%;
+  }
+}

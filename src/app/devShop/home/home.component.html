@@ -1,0 +1,206 @@
+<div class="home_title">
+    <p>Use your favorite <br>
+        programming language/tool</p>
+</div>
+<div class="home_contenedor-colleccion">
+    <div class="home_colección">
+        <p>Colección</p>
+        <div class="coleccion_lenguage" *ngFor="let datalenguage  of product">
+            <div class="coleccion_lenguage-item" (click)="productHome('.NET',datalenguage.tipo_prod)">
+                .NET
+            </div>
+            <div class="coleccion_lenguage-item" (click)="productHome('angular',datalenguage.tipo_prod)">
+                Angular
+            </div>
+            <div class="coleccion_lenguage-item">
+                Assembly
+            </div>
+            <div class="coleccion_lenguage-item">
+                Bash
+            </div>
+            <div class="coleccion_lenguage-item">
+                Brainfuck
+            </div>
+            <div class="coleccion_lenguage-item">
+                C
+            </div>
+            <div class="coleccion_lenguage-item" (click)="productHome('c#',datalenguage.tipo_prod)">
+                C#
+            </div>
+            <div class="coleccion_lenguage-item">
+                C++
+            </div>
+            <div class="coleccion_lenguage-item">
+                Clojure
+            </div>
+            <div class="coleccion_lenguage-item">
+                Cobol
+            </div>
+            <div class="coleccion_lenguage-item">
+                Haskell
+            </div>
+
+            <div class="coleccion_lenguage-item">
+                Erlang
+            </div>
+            <div class="coleccion_lenguage-item">
+                Fortran
+            </div>
+            <div class="coleccion_lenguage-item">
+                F#
+            </div>
+            <div class="coleccion_lenguage-item">
+                Elm
+            </div>
+            <div class="coleccion_lenguage-item">
+                Java
+            </div>
+            <div class="coleccion_lenguage-item">
+                Javascript
+            </div>
+            <div class="coleccion_lenguage-item">
+                Julia
+            </div>
+            <div class="coleccion_lenguage-item">
+                Kotlin
+            </div>
+            <div class="coleccion_lenguage-item">
+                Lua
+            </div>
+            <div class="coleccion_lenguage-item">
+                Neovin
+            </div>
+            <div class="coleccion_lenguage-item">
+                Objective-C
+            </div>
+            <div class="coleccion_lenguage-item">
+                Ocaml
+            </div>
+            <div class="coleccion_lenguage-item">
+                Perl
+            </div>
+            <div class="coleccion_lenguage-item">
+                Php
+            </div>
+            <div class="coleccion_lenguage-item" (click)="productHome('python',datalenguage.tipo_prod)">
+                Python
+            </div>
+            <div class="coleccion_lenguage-item">
+                R
+            </div>
+            <div class="coleccion_lenguage-item">
+                React
+            </div>
+            <div class="coleccion_lenguage-item">
+                Scala
+            </div>
+            <div class="coleccion_lenguage-item">
+                Sql
+            </div>
+            <div class="coleccion_lenguage-item">
+                Svelte
+            </div>
+            <div class="coleccion_lenguage-item">
+                Swift
+            </div>
+            <div class="coleccion_lenguage-item">
+                Typescript
+            </div>
+            <div class="coleccion_lenguage-item">
+                Vue
+            </div>
+            <div class="coleccion_lenguage-item">
+                Webassembly
+            </div>
+            <div class="coleccion_lenguage-item">
+                Zig
+            </div>
+        </div>
+        <div class="colleccion_product"></div>
+    </div>
+    <form class="home_colección_prod" *ngFor="let data  of product">
+        <div class="colección_prod_image">
+            <img [src]="imagenProduct || data.thema_imagen.claro" [alt]="data.nombre_prod">
+            <button class="prod_image-btn" (click)="addCardList()">+ Agregar al carrito S/ 194.00 </button>
+            <div class="prod_image_btns">
+                <button class="prod_image-btn" [routerLink]="['/colecion/',data.collecion,data.nombre_prod]">
+                    Detalles del producto →
+                </button>
+                <button class="prod_image-btn" [routerLink]="['/colecion/',data.collecion]">
+                    Colección Python →
+                </button>
+
+            </div>
+        </div>
+        <div class="colección_prod_details">
+            <div class="prod_details_item">
+                <div class="details_item_1">
+                    <p>Producto</p>
+                    <div class="details_item_1-btn">
+                        <button class="active" (click)="productHome( data.collecion,'sudadera')">Sudadera</button>
+                        <button (click)="productHome(data.collecion,'polo')">Polo</button>
+                        <button (click)="productHome(data.collecion,'gorra')">Gorra</button>
+                    </div>
+                </div>
+                <div class="details_item_1">
+                    <p>Tema</p>
+                    <div class="details_item_1-btn">
+                        <button [class]="nombreBtnActive=='dark'?'active':''"
+                            (click)="temaProduct('dark')">Oscuro</button>
+                        <button [class]="nombreBtnActive=='ligth'?'active':''"
+                            (click)="temaProduct('ligth')">Claro</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prod_details_item">
+                <div class="details_item_1">
+                    <p>Tipo de Arte</p>
+                    <div class="details_item_1-btn">
+                        <button class="active">Logo</button>
+                        <button>Logotipo bordado</button>
+                        <button>Mascota</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prod_details_item">
+
+                <div class="details_item_1">
+                    <p>Color de Arte</p>
+                    <div class="details_item_1-btn">
+                        <button class="active">Negro</button>
+                        <button>Blanco</button>
+                        <button>De colores</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prod_details_item">
+
+                <div class="details_item_1">
+                    <p>Color</p>
+                    <div class="details_item_1-btncolor">
+                        <button *ngFor="let color of colortema ; let i = index" (click)="cambioImgColor(color.image,i)"
+                            [class]="statusActive==i?'active':''">
+                            <div [class]="color.nombre_color"></div>
+                            <p>{{color.nombre_color}}</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="prod_details_item">
+                <div class="details_item_1">
+                    <p>Tamaño</p>
+                    <div class="details_item_1-btntalla">
+                        <button *ngFor="let dtitem of data.talla;let i = index" 
+                        (click)="cambioTalla(i,dtitem)"
+                            [class]="statusActiveTalla==i?'active':''">
+                            {{dtitem}}
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<app-buscadoProd class="home_contenedor-colleccion"></app-buscadoProd>

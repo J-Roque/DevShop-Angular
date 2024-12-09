@@ -1,0 +1,192 @@
+.hone_listprod {
+    max-width: 1100px;
+    /* Establece un ancho máximo para el contenedor */
+    margin: 0 auto;
+    /* Centra el contenedor horizontalmente */
+}
+
+.home_prod_sheard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #1e2021;
+    padding: 40px;
+
+    p {
+        font-family: 'Gugi', sans-serif;
+        font-size: 40px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    input {
+        width: 600px;
+        border-style: none;
+        padding: 12px;
+        border: 1px solid #1e2021;
+        background-color: #3c3837;
+        outline: none;
+        color: #7c6f64;
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    button {
+        background-color: #689D6A;
+        border-style: none;
+        outline: none;
+        color: #fff;
+        padding: 12px;
+        font-size: 16px;
+        letter-spacing: 2px;
+        cursor: pointer;
+    }
+
+    .prod_sheard-btn {
+        width: 1005;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+.prod_sheard-collecion {
+    border-bottom: 1px solid #1e2021;
+    padding-top: 40px;
+
+    p {
+        color: #FBF1C7;
+        padding: 8px;
+        background-color: #3c3837;
+        display: inline;
+        letter-spacing: 1px;
+    }
+
+    img {
+        height: 163px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+ 
+
+    .sheard-collecion_contenedor {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(163px, 163px));
+        /* Establece un mínimo de 163px y un máximo de 1fr para las columnas */
+        padding: 40px 0;
+        gap: 20px;
+        justify-content: center;
+        /* Centra los elementos horizontalmente */
+        grid-auto-flow: row;
+    }
+
+    .sheard-collecion_contenedor .colleccion_contenedor_title {
+        grid-column: 1 / -1;
+        /* Ocupa todas las columnas disponibles */
+        height: auto;
+
+    }
+
+    .colleccion_contenedor_card {
+        width: 100%;
+        margin: 0 auto;
+        p {
+            background-color: inherit;
+            text-align: start;
+            padding: 0;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .cl-camisetas {
+        grid-template-columns: repeat(auto-fit, minmax(251px, 251px));
+
+        /* Establece un mínimo de 163px y un máximo de 1fr para las columnas */
+        p {
+            word-wrap: break-word;
+        }
+
+        img {
+            max-width: 100%;
+            height: 251px;
+        }
+
+        span {
+            display: block;
+            color: #8EC07C;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .p-secundario {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #A89984;
+            margin-top: 5PX;
+        }
+    }
+
+}
+
+@media(max-width:600px) {
+
+    // .cl-camisetas{
+    //     .colleccion_contenedor_card{
+    //        width: 45%;
+    //         img{
+    //          height: auto;
+    //         }
+    //     }
+
+    // }
+}
+
+@media(max-width:500px) {
+    .home_prod_sheard {
+        p {
+            font-size: 30px;
+        }
+
+    }
+
+
+}
+
+@media(max-width:400px) {
+    .colleccion_contenedor_card {
+        width: 45%;
+
+        img {
+            // height: 200px !important;
+        }
+    }
+
+    .home_prod_sheard {
+        p {
+            font-size: 25px;
+        }
+
+    }
+}
+
+
+
+// .sheard-collecion_contenedor {
+//     width: 100%;
+//     justify-content: center;
+// }
+// .prod_sheard-btn {
+//     input {
+//         width: 100% !important;
+//     }
+// }
+// .coleccion_lenguage {
+//     margin: 0 20px 40px 20px;
+// }

@@ -1,0 +1,30 @@
+<div class="prod_sheard-collecion">
+  <div class="sheard-collecion-titleresult">
+  <span *ngFor=" let coleccion of colecionProd">Resultados de la búsqueda de "{{coleccion.collecion}}"</span>
+  </div>
+  <div class="sheard-collecion_contenedor" >
+    <div class="colleccion_contenedor_title">
+      <p >Coleccion</p>
+    </div>
+    <div class="colleccion_contenedor_card" *ngFor="let data of colecionProd " [routerLink]="['/colecion/',data.collecion]" >
+      <img [src]="data.thema_imagen.oscuro" alt="">
+      <p class="p-secundario">{{data.collecion}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="prod_sheard-collecion">
+  <div class="sheard-collecion_contenedor">
+    <div class="colleccion_contenedor_title">
+      <p>Coleccion</p>
+    </div>
+    <div class="colleccion_contenedor_card" *ngFor="let data of prodList" [routerLink]="['/colecion/',data.collecion,data.nombre_prod]">
+      <img [src]="data.thema_imagen.oscuro" [alt]="data.nombre_prod">
+      <p>{{data.nombre_prod}}</p>
+      <span class="precio_producto">
+         PEN S/ {{data.precio}}
+      </span>
+      <p class="p-secundario">{{data.collecion}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,361 @@
+/* Estilos generales */
+.contendor_home {
+    max-width: 1100px;
+    height: auto;
+    margin: 0 auto;
+}
+.home_contenedor-colleccion{
+    max-width: 1100px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.negro {
+    background-color: #000;
+}
+
+.azul-marino {
+    background-color: #1A2237;
+}
+
+.granate {
+    background-color: #642838;
+}
+
+.chocolate {
+    background-color: #31221D;
+}
+
+.rojo {
+    background-color: #C62A32;
+}
+
+.griss {
+    background-color: #454545;
+}
+
+.real {
+    background-color: #084F97;
+}
+
+.azul-indigo {
+    background-color: #476579;
+}
+
+.azul-marino-claro {
+    background-color: #5C606F;
+}
+
+.verde-irlandes {
+    background-color: #129447;
+}
+
+.verde-militar {
+    background-color: #585C3B;
+}
+
+
+/* Estilos del título de la página principal */
+.home_title {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #1e2021;
+    padding: 30px 0;
+
+    p {
+        font-family: 'Gugi', sans-serif;
+        font-size: 40px;
+        color: #fff;
+        font-weight: 600;
+    }
+}
+
+/* Estilos de la colección de productos */
+.home_colección {
+    margin-top: 40px;
+
+    p {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #7c6f64;
+        letter-spacing: 1px;
+    }
+}
+
+/* Estilos de los lenguajes de la colección */
+.coleccion_lenguage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+    .coleccion_lenguage-item {
+        border: 1px solid #FBF1C7;
+        color: #FBF1C7;
+        padding: 12px;
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #FBF1C7;
+            color: #1e2021;
+        }
+    }
+}
+
+/* Estilos de la colección de productos y detalles */
+.home_colección_prod {
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid #1e2021;
+    padding-bottom: 50px;
+
+    .colección_prod_image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+     
+        .prod_image-btn {
+            inset: 0 -4px 0 0 rgba(0, 0, 0, .25);
+            border-style: none;
+            padding: 12px;
+            background-color: #689D6A;
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+            cursor: pointer;
+
+            
+        }
+
+        .prod_image_btns {
+            display: flex;
+            gap: 10px;
+
+            button {
+                background-color: #504845;
+            }
+        }
+    }
+
+    .colección_prod_details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .prod_details_item {
+        display: flex;
+        gap: 50px;
+
+        .details_item_1 {
+            p {
+                color: #7c6f64;
+            }
+
+            .details_item_1-btn {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+                // Estado de botn activo
+               
+                button.active{
+                    background-color: #FBF1C7 ;
+                    color: #1e2021 ;
+                    
+                }
+             
+                button {
+                    background-color: inherit;
+                    padding: 12px;
+                    border: 1px solid #FBF1C7;
+                    letter-spacing: 1px;
+                    color: #FBF1C7;
+                    font-weight: 500;
+                    font-family: 'Roboto', sans-serif;
+                    cursor: pointer;
+                    font-size: 16px;
+
+                    &:hover {
+                        background-color: #FBF1C7;
+                        color: #1e2021;
+                    }
+                }
+              
+            }
+           
+
+            .details_item_1-btncolor {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 10px;
+             
+                button.active{
+                    background-color: #FBF1C7;
+                }
+                button.active p {
+                    color: #1e2021; 
+                }
+
+                
+                button {
+                    display: flex;
+                    gap: 8px;
+                    padding: 5px;
+                    border: 1px solid #FBF1C7;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    font-family: 'Roboto', sans-serif;
+                    cursor: pointer;
+                    font-size: 15px;
+                    background-color: inherit;
+                    &:hover {
+                        background-color: #FBF1C7;
+                        color: #1e2021 ;
+                     }
+                    div {
+                        width: 16px;
+                        height: 16px;
+                    }
+                    p{
+                      color: #FBF1C7;
+                      text-transform: capitalize;
+                    }
+                   
+                }
+                button:hover p {
+                    color: #1e2021; /* Cambiar el color del texto cuando se hace hover */
+                }
+                .negro {
+                    background-color: #000;
+                }
+
+                /* Otras clases de colores... */
+            }
+
+            .details_item_1-btntalla {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+                // Estado de botn activo
+                button.active{
+                    background-color: #FBF1C7 ;
+                    color: #1e2021 ;
+                }
+                button {
+                    gap: 8px;
+                    padding: 5px 12px;
+                    border: 1px solid #FBF1C7;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    font-family: 'Roboto', sans-serif;
+                    cursor: pointer;
+                    font-size: 15px;
+                    background-color: inherit;
+                    color: #FBF1C7;
+
+                    &:hover {
+                        background-color: #FBF1C7;
+                        color: #1e2021;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:1050px) {
+    .home_colección_prod {
+        padding: 20px;
+    }
+
+    .colección_prod_image {
+        img {
+            max-width: 400px;
+        }
+    }
+
+}
+
+@media(max-width:900px) {
+    .home_colección_prod {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .colección_prod_details {
+        align-items: center;
+
+        button {
+            p {
+                display: none;
+            }
+        }
+    }
+
+    .hone_listprod {
+        justify-content: center;
+        padding: 0 30px;
+    }
+
+    .sheard-collecion_contenedor {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .coleccion_lenguage {
+        margin: 0 20px 40px 20px;
+    }
+
+  
+
+
+}
+
+
+@media(max-width:500px) {
+.home_title {
+    p{
+        font-size: 30px ;
+
+    }
+}
+    .coleccion_lenguage{
+    flex-wrap: nowrap ;
+    overflow-x: auto; 
+    overflow-y: hidden;
+    white-space: nowrap;
+    cursor: ew-resize
+    }
+    .colección_prod_image{
+        img{
+        width: 300px ;
+        }
+    }
+    .colección_prod_details{
+     
+        .prod_details_item {
+           justify-content: space-around;
+           flex-wrap: wrap;
+           gap: 10px ;
+           button{
+            font-size: 15px ;
+           }
+        }
+    }
+    .prod_image_btns{
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+}

@@ -1,0 +1,9 @@
+  <div class="home_prod_sheard">
+    <p>Buscar una colección</p>
+    <div class="prod_sheard-btn">
+        <input type="text" [formControl]="formleguage" placeholder="C++, Javascript, Python, Rust, Java, Kotlin...">
+        <button [routerLink]="[formleguage.value]">Buscar</button>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>

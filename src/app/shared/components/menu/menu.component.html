@@ -1,0 +1,55 @@
+<section class="contenedor-menu">
+  <div class="menu">
+    <div class="menu-header">
+      <p>Carro</p>
+      <a (click)="closeMenu(false)">CERRAR</a>
+    </div>
+    <div class="menu-sindata" *ngIf="statusRegistro">
+      <p>Parece que aún no has agregado nada,
+        ¡comencemos!</p>
+      <br>
+      <p style="text-decoration: underline;" (click)="closeMenu(false)">← Seguir comprando</p>
+    </div>
+    <div class="menu-lisprod">
+      <div class="lisprod-cart">
+        <img src="https://cdn.shopify.com/s/files/1/0798/7514/6074/files/unisex-crew-neck-sweatshirt-black-front-65d9fbc00f8b2.jpg" alt="">
+        <div class="lisprod-cart-info">
+          <div class="cart-info-item item1">
+            <p>python_dark_sweatshirt</p>
+            <span>$34</span>
+          </div>
+          <div class="cart-info-item">
+            <p class="item-title">Color</p>
+            <p>Black</p>
+          </div>
+          <div class="cart-info-item">
+            <p class="item-title">Tamaño</p>
+            <p>S</p>
+          </div>
+          <div class="cart-info-item">
+            <p class="item-title">Cantidad</p>
+            <div class="btn-cantidad">
+              <button>-</button>
+              <p>1</p>
+              <button>+</button>
+            </div>
+          </div>
+          <div class="cart-info-item btn-remov">
+            <a  class="item-title" href="">Remover</a>
+         
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-subtotal">
+      <div class="menu-subtotal-cardprecio">
+        <p>Suptotal  =  <span>$79.00</span></p>
+      </div>
+      <div class="menu-subtotal-cardbtn">
+        <button>Pagar ( 2 Articulos )</button>
+        <p>Impuestos incluidos. Gastos de envío y descuentos calculados al finalizar la compra.</p>
+      </div>
+    </div>
+  </div>
+
+</section>

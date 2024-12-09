@@ -1,0 +1,113 @@
+<div class="contendor_home">
+  <div class="home_contenedor-colleccion" *ngFor="let data of devshop ">
+
+    <div class="home_colección_prod">
+      <div class="colección_prod_image">
+        <img [src]="imagenProduct || data.thema_imagen.oscuro
+          " [alt]="data.nombre_prod"
+          >
+      </div>
+      <div class="colección_prod_details">
+        <div class="prod_details_item">
+          <div class="details_item_1 product-title-precio">
+            <p>
+              {{data.nombre_prod}}
+            </p>
+            <span>
+              {{data.precio | currency:'PEN '}}
+            </span>
+          </div>
+        </div>
+        <div class="prod_details_item">
+          <div class="details_item_1">
+            <p>Color</p>
+            <div class="details_item_1-btncolor">
+              <button *ngFor="let color of colorImage" 
+              (click)="cambioImgColor(color.image);imgColor = color.image; colorProd = color.nombre_color">
+                <div [class]="color.nombre_color">
+                </div>
+                {{color.nombre_color}}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="prod_details_item">
+          <div class="details_item_1">
+            <p>Tamaño</p>
+            <div class="details_item_1-btntalla">
+              <button *ngFor="let dtasize of data.talla" 
+              (click)="selectedSize=dtasize">
+                {{dtasize}}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="prod_details_item" >
+          <div class="details_item_1">
+            <button class="btn-agregar-prod" (click)="addToCard(data.precio,data.nombre_prod,data.tipo_prod,selectedSize,imgColor,colorProd)">+ Add to cart</button>
+          </div>
+        </div>
+        <div class="prod_details_item">
+          <div class="details_item_1">
+            <p class="p-descripcion">{{data.descripcion.detalle}}</p>
+            <ul>
+              <li class="p-descripcion" *ngFor="let descripcion of data.descripcion.detalleprod">
+                {{descripcion}}
+              </li>
+            </ul>
+            <a href="#">Share</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="prod_sheard-collecion">
+      <p>Productos de ensamblaje</p>
+      <div class="sheard-collecion_contenedor cl-camisetas">
+        <div class="colleccion_contenedor_card">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0798/7514/6074/files/unisex-heavy-blend-hoodie-black-front-65c36be90288e_500x.jpg?v=1707305976"
+            alt="">
+          <p>zig_dark_hoodie</p>
+          <span class="precio_producto">
+            PEN S/ 172.00
+          </span>
+          <p class="p-secundario">Python</p>
+        </div>
+        <div class="colleccion_contenedor_card">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0798/7514/6074/files/unisex-heavy-blend-hoodie-black-front-65c3196fa02d2_500x.jpg?v=1707284863"
+            alt="">
+          <p>zig_dark_hoodie</p>
+          <span class="precio_producto">
+            PEN S/ 172.00
+          </span>
+          <p class="p-secundario">Python</p>
+        </div>
+        <div class="colleccion_contenedor_card">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0798/7514/6074/files/unisex-heavy-blend-hoodie-black-front-65bf8bc95ebe7_500x.jpg?v=1707051997"
+            alt="">
+          <p>zig_dark_hoodie</p>
+          <span class="precio_producto">
+            PEN S/ 172.00
+          </span>
+          <p class="p-secundario">Python</p>
+        </div>
+        <div class="colleccion_contenedor_card">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0798/7514/6074/files/14523279563390732907_2048_500x.jpg?v=1703627775"
+            alt="">
+          <p>zig_dark_hoodie</p>
+          <span class="precio_producto">
+            PEN S/ 172.00
+          </span>
+          <p class="p-secundario">Python</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="prod_sheard-collecion">
+  <div class="sheard-collecion_contenedor">
+    <!-- <div class="colleccion_contenedor_title">
+      <p>Coleccion</p>
+    </div> -->
+    <div class="colleccion_contenedor_card"  
+    *ngFor="let  data of colecionProd" [routerLink]="['/colecion/',data.nombre]">
+      <img  [src]="data.image_url" alt="{{data.nombre}}">
+      <p class="p-secundario" >{{data.nombre}}</p>
+    </div>
+  </div>
+</div>
+ 
+<!-- <div class="colleccion_contenedor_card">
+  <img src="https://cdn.shopify.com/s/files/1/0798/7514/6074/files/unisex-heavy-blend-hoodie-black-front-65c3196fa02d2_500x.jpg?v=1707284863" alt="">
+  <p>zig_dark_hoodie</p>
+  <span class="precio_producto">
+     PEN S/ 172.00
+  </span>
+  <p class="p-secundario">Python</p>
+</div>
+-->
