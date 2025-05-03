@@ -11,45 +11,43 @@
       <p style="text-decoration: underline;" (click)="closeMenu(false)">← Seguir comprando</p>
     </div>
     <div class="menu-lisprod">
-      <div class="lisprod-cart">
-        <img src="https://cdn.shopify.com/s/files/1/0798/7514/6074/files/unisex-crew-neck-sweatshirt-black-front-65d9fbc00f8b2.jpg" alt="">
+      <div class="lisprod-cart" *ngFor="let item of productsCarrd">
+        <img src={{item.imgColor}} alt="">
         <div class="lisprod-cart-info">
           <div class="cart-info-item item1">
-            <p>python_dark_sweatshirt</p>
-            <span>$34</span>
+            <p>{{item.nombre_prod}}</p>
+            <span>S/{{item.precio}}</span>
           </div>
           <div class="cart-info-item">
             <p class="item-title">Color</p>
-            <p>Black</p>
+            <p>{{item.coloProd}}</p>
           </div>
           <div class="cart-info-item">
             <p class="item-title">Tamaño</p>
-            <p>S</p>
+            <p>{{ item.tamano}}</p>
           </div>
           <div class="cart-info-item">
             <p class="item-title">Cantidad</p>
             <div class="btn-cantidad">
-              <button>-</button>
-              <p>1</p>
-              <button>+</button>
+              <button (click)="decreaseQuantity(item)">-</button>
+              <p>{{ item.cantidad }}</p>
+              <button (click)="increaseQuantity(item)">+</button>
             </div>
           </div>
           <div class="cart-info-item btn-remov">
-            <a  class="item-title" href="">Remover</a>
-         
+            <a (click)="removeProduct(item)" class="item-title" href="javascript:void(0)">Remover</a>
           </div>
         </div>
       </div>
     </div>
     <div class="menu-subtotal">
       <div class="menu-subtotal-cardprecio">
-        <p>Suptotal  =  <span>$79.00</span></p>
+        <p>Subtotal: {{ calculateSubtotal() | currency: 'PEN ':'symbol' }}</p>
       </div>
-      <div class="menu-subtotal-cardbtn">
-        <button>Pagar ( 2 Articulos )</button>
+      <div class="menu-subtotal-cardbtn" *ngIf="numProductosEnCarrito">
+        <button>Pagar ( {{numProductosEnCarrito}}  Articulos )</button>
         <p>Impuestos incluidos. Gastos de envío y descuentos calculados al finalizar la compra.</p>
       </div>
     </div>
   </div>
-
 </section>

@@ -12,37 +12,50 @@ import { DevshopService } from 'src/app/services/devshopService.service';
 })
 export class SearchComponent implements OnInit {
 
-  colecionProd:Devshop[] =[];
-  prodList:Devshop[]=[];
+  colecionProd: Devshop[] = [];
+  prodList: Devshop[] = [];
 
-  formleguage = new FormControl('',Validators.required);
- 
-  constructor( 
-    private devshopService:DevshopService,
-    private router:Router,
-    private activateRoute:ActivatedRoute
-    ) { }
+  formleguage = new FormControl<string | null>('', Validators.required);
+
+  constructor(
+    private devshopService: DevshopService,
+    private router: Router,
+    private activateRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    if(this.activateRoute.params !== undefined){
-      console.log('ok');
-      
+    this.activateRoute.params
+      .pipe(
+        switchMap(params => {
+          const lenguage = params['lenguage'];
+          if (lenguage) {
+            return this.devshopService.getAllProductLenguage(lenguage);
+          }
+          return [];
+        })
+      )
+      .subscribe(
+        data => {
+          this.colecionProd = data;
+        },
+        error => {
+          console.error('Error fetching product data', error);
+        }
+      );
+  }
+
+  seachLenguageProd() {
+    const lenguage = this.formleguage.value;
+    if (this.formleguage.valid && lenguage) {
+      this.devshopService.getAllProductLenguage(lenguage)
+        .subscribe(
+          data => {
+            this.prodList = data;
+          },
+          error => {
+            console.error('Error fetching product data', error);
+          }
+        );
     }
-    // .pipe(
-    //   switchMap(({leguage})=> this.devshopService.getAllProductLenguage(leguage)),
-    // ).subscribe(data=>{
-    //   if(!data || Object.keys(data).length === 0){
-    //     return this.router.navigate(['colecion']);
-    //   }
-    //   this.colecionProd= data.filter(item=>item.tipo_prod=="sudadera");
-    //   this.prodList= data;
-    //   return;
-    // })
-
   }
-
-  seachLenguageProd(){
-    // this.devshopService.getAllProductLenguage(this.formleguage.value)
-  }
-
 }

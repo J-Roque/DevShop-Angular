@@ -36,7 +36,6 @@
         margin-left: 10px;
         cursor: pointer;
     }
-
 }
 
 .prod_sheard-collecion {
@@ -64,29 +63,33 @@
         justify-content: center;
         grid-auto-flow: row;
     }
+
     .sheard-collecion_contenedor .colleccion_contenedor_title {
         grid-column: 1 / -1;
         /* Ocupa todas las columnas disponibles */
         height: auto;
-
     }
+
     .colleccion_contenedor_card {
+        cursor: pointer;
         display: flex;
         flex-direction: column;
+
         p {
             background-color: inherit;
             font-size: 12px;
             letter-spacing: 2px;
-            color: #A89984;
-            margin-top: 5PX;
+            margin-top: 5px;
         }
-    } 
 
+        &:hover p {
+            text-decoration: underline;
+            color: rgb(251, 241, 199);
+        }
+    }
 }
 
-
 @media(max-width:900px) {
-
     // Home
     .home_prod_sheard {
         width: 100%;
@@ -103,14 +106,10 @@
             justify-content: center;
         }
     }
-
-
-
 }
 
 @media(max-width:600px) {
     .home_prod_sheard {
-
         p {
             font-size: 30px;
         }
@@ -124,12 +123,10 @@
     //     }
 
     // }
-
 }
 
 @media(max-width:400px) {
     .home_prod_sheard {
-
         p {
             font-size: 20px;
         }

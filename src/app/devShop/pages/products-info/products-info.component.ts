@@ -40,7 +40,7 @@ export class ProductsInfoComponent implements OnInit {
       }
       this.devshop = data;
       this.temaProduct('dark');
-      console.log(this.devshop);
+      // console.log(this.devshop);
       
       
       return;
@@ -62,33 +62,38 @@ export class ProductsInfoComponent implements OnInit {
       }
     }  
   }
-  tallaProd(talla:string){
-    // this.productoCard[0].tamaño = talla;
+
+  addToCard(precio: number, nombre_Prod: string, tipo_prod: string,
+    tamaño: string, image: string | undefined, colorimg: string | undefined,id_prod: number) {
+
+   // Si tamaño o image son undefined, asignar valores por defecto antes de llamar al servicio
+   if (!tamaño || !image || !colorimg) {
+    this.devshop.forEach(item => {
+      if (!tamaño) {
+        tamaño = item.talla[0];  // Primer tamaño disponible
+      }
+      if (!image || !colorimg) {
+        image = item.color.dark[0].image; // Primera imagen disponible
+        colorimg = item.color.dark[0].nombre_color;
+      }
+    });
   }
-
   
-  addToCard(precio:number,nombre_Prod:string,tipo_prod:string,
-    tamaño:string,image:string,colorimg:string){
-    this.cardService.getCardProduct(precio,nombre_Prod,tipo_prod,
-      tamaño,image,colorimg)
-    // if (tamaño == undefined || image == undefined) {
-    //   this.devshop.map((item=>{
-    //     tamaño =item.talla[0];
-    //     image = item.color.dark[0].image;
-    //     colorimg = item.color.dark[0].nombre_color;
-    //   }))
-    // }
+   // Crea un nuevo producto corregido
+   const nuevoProducto: ProductoCard = {
+    id_prod:id_prod,
+    nombre_prod: nombre_Prod,
+    producto: tipo_prod,
+    coloProd: colorimg!,
+    imgColor: image!,
+    tamano: tamaño,
+    cantidad: 1,
+    precio: precio
+  };
 
-    // const nuevoProducto: ProductoCard = {
-    //   nombre_prod: nombre_Prod,
-    //   producto: tipo_prod,
-    //   coloProd: colorimg,
-    //   imgColor:image,
-    //   tamaño: tamaño,
-    //   cantidad: 1,
-    //   precio: precio
-    // };
-    // this.productoCard.push(nuevoProducto);
-    // console.log(this.productoCard);
+    //Llama al método del servicio para agregar el producto al carrito
+    this.cardService.getCardProduct(nuevoProducto);
+    console.log(nuevoProducto);
+    
   }
 }

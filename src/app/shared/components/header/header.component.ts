@@ -51,15 +51,14 @@ export class HeaderComponent implements OnInit {
   this.headerService.setStatusMenu(nuevoValor);
  }
 
- showTotalProd(){
-  this.cardService.countCardProd().subscribe(
-    data=>{
-      console.log(data);
-      alert('daa');
+//  showTotalProd(){
+//   this.cardService.countCardProd().subscribe(
+//     data=>{
+//       console.log(data);
+//       alert('daa');
       
-    }
-  )
- }
-//  contador de productos
+//     }
+//   )
+//  }
  
 }

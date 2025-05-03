@@ -39,11 +39,15 @@
         p {
             word-wrap: break-word;
             background-color: inherit;
+            cursor: pointer;
             font-size: 12px;
             letter-spacing: 2px;
             color: #FBF1C7;
             margin-top: 5PX;
             padding: 0;
+            &:hover{
+                text-decoration: underline;
+            }
         }
         span {
             color: #8EC07C;
@@ -55,6 +59,9 @@
             letter-spacing: 2px;
             color: #FBF1C7;
             margin-top: 5PX;
+        }
+        img{
+            cursor: pointer;
         }
     } 
 

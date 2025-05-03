@@ -7,13 +7,13 @@
         <p>Colección</p>
         <div class="coleccion_lenguage" *ngFor="let datalenguage  of product">
             <div class="coleccion_lenguage-item" (click)="productHome('.NET',datalenguage.tipo_prod)">
-                .NET
+                .NET 
             </div>
             <div class="coleccion_lenguage-item" (click)="productHome('angular',datalenguage.tipo_prod)">
                 Angular
             </div>
             <div class="coleccion_lenguage-item">
-                Assembly
+                Assembly 
             </div>
             <div class="coleccion_lenguage-item">
                 Bash
@@ -121,13 +121,16 @@
     <form class="home_colección_prod" *ngFor="let data  of product">
         <div class="colección_prod_image">
             <img [src]="imagenProduct || data.thema_imagen.claro" [alt]="data.nombre_prod">
-            <button class="prod_image-btn" (click)="addCardList()">+ Agregar al carrito S/ 194.00 </button>
+            <button class="prod_image-btn" 
+            (click)="addToCard(
+           data.id_produ,data.nombre_prod,
+            data.tipo_prod,data.precio,tallaP,imagenProduct,color_prod)">+ Agregar al carrito S/{{data.precio}} </button>
             <div class="prod_image_btns">
                 <button class="prod_image-btn" [routerLink]="['/colecion/',data.collecion,data.nombre_prod]">
                     Detalles del producto →
                 </button>
                 <button class="prod_image-btn" [routerLink]="['/colecion/',data.collecion]">
-                    Colección Python →
+                    Colección {{data.collecion}} →
                 </button>
 
             </div>
@@ -179,7 +182,8 @@
                 <div class="details_item_1">
                     <p>Color</p>
                     <div class="details_item_1-btncolor">
-                        <button *ngFor="let color of colortema ; let i = index" (click)="cambioImgColor(color.image,i)"
+                        <button *ngFor="let color of colortema ; let i = index" 
+                        (click)="cambioImgColor(color.image,i,color.nombre_color)"
                             [class]="statusActive==i?'active':''">
                             <div [class]="color.nombre_color"></div>
                             <p>{{color.nombre_color}}</p>
@@ -197,6 +201,10 @@
                             {{dtitem}}
                         </button>
 
+                        <!-- <button *ngFor="let dtasize of data.talla" 
+                        (click)="selectedSize=dtasize">
+                          {{dtasize}}
+                        </button> -->
                     </div>
                 </div>
             </div>

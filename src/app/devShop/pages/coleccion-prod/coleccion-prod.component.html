@@ -4,9 +4,12 @@
     <div class="colleccion_contenedor_title">
       <p>Coleccion</p>
     </div>
-    <div class="colleccion_contenedor_card" *ngFor="let datalek of prodcoleccion" [routerLink]="['/colecion/',datalek.collecion,datalek.nombre_prod]">
-      <img [src]="datalek.thema_imagen.oscuro"  [alt]="datalek.nombre_prod" >
-      <p>{{datalek.nombre_prod}}</p>
+    <div class="colleccion_contenedor_card" *ngFor="let datalek of prodcoleccion" >
+      <img 
+      [src]="datalek.thema_imagen.oscuro" 
+      [alt]="datalek.nombre_prod"
+      [routerLink]="['/colecion/',datalek.collecion,datalek.nombre_prod]" >
+      <p [routerLink]="['/colecion/',datalek.collecion,datalek.nombre_prod]">{{datalek.nombre_prod}}</p>
       <span class="precio_producto">
          PEN S/ {{datalek.precio}}
       </span>
