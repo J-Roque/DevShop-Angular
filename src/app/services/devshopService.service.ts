@@ -9,8 +9,7 @@ export class DevshopService  {
 
 constructor( private http :HttpClient) { }
  
-private apiUrl: string  ="http://localhost:4000/api/products"
-
+private apiUrl: string  ="https://api-devshop-nodejs-production.up.railway.app/api/products"
 // obtener todo los productos
 getAllProduct():Observable<any[]>{
   return this.http.get<any[]>(this.apiUrl)
